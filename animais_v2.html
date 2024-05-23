@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="animalImage" src="" alt="Animal">
+    <button onclick="showRandomAnimal()">E esse?</button>
+
+    <script>
+        const animalImages = [
+            "https://th.bing.com/th/id/R.268c5a88a8692a74b558f07a97e18e11?rik=1X%2ffwHwTA2svGA&pid=ImgRaw&r=0",
+            "https://www.infoescola.com/wp-content/uploads/2010/06/tigre-de-bengala-60322900.jpg",
+            "https://th.bing.com/th/id/R.ac2f9d2852a2d1cbeaf0b2ab7fb494a5?rik=mhB%2fyg3KVGr5nw&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/R.0863874ff5dceed96c8652dcabd43262?rik=TfIAJZQxOS5kfQ&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/R.4d9b4f7a2ea6ff217cf335c2fe9eabee?rik=dj%2b66Pv%2bhKlgVw&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/OIP.5r2ebzaUD5Kw6qumDlEDJgHaHa?rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.CifAArEZBBE8oX0Rc9dGfwHaJ5?rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/R.a5d91af68919c6143add60c2d846ccd3?rik=gg7i8%2bgX3tm1eA&riu=http%3a%2f%2fquercusambiente.pt%2fwp-content%2fuploads%2f2017%2f02%2fIMG_6334.jpg&ehk=zthw5v9%2bQJEDXt3riFBYpXGjfCpNG4QFFBGxaidVOhI%3d&risl=&pid=ImgRaw&r=0",
+            "https://th.bing.com/th/id/OIP.E79vmQ8xHls3Pl2uxINrFAHaE8?rs=1&pid=ImgDetMain",
+            "https://www.mundoecologia.com.br/wp-content/gallery/arraia-1/Arraia-5.jpg",
+            "https://th.bing.com/th/id/R.aef9c32465c82bf0ad78c18f91de42ac?rik=ebC8ww8XCAHTdw&pid=ImgRaw&r=0"
+
+        ];
+
+        function showRandomAnimal() {
+            const randomIndex = Math.floor(Math.random() * animalImages.length);
+            const randomImage = animalImages[randomIndex];
+            document.getElementById('animalImage').src = randomImage;
+        }
+
+        // Show a random animal image when the page loads
+        showRandomAnimal();
+    </script>
+</body>
+</html>

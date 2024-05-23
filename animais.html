@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Site - Animais</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        #display {
+            max-width: 80%;
+            max-height: 80%;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="display" src="" alt="Animal">
+        <button onclick="showRandomAnimal()">E esse?</button>
+    </div>
+    <script>
+        const animals = [
+            'leao.jpg',
+            'tigre.jpg',
+            'cachorro.jpg',
+            'gato.jpg',
+            'cobra.jpg',
+            'suricato.jpg',
+            'girafa.jpg',
+            'sapo.jpg',
+            'tubarao.jpg',
+            'arraia.jpg',
+            'hipopotamo.jpg',
+						'urso.jpg',
+						'ursopolar.jpg'
+        ];
+
+        function showRandomAnimal() {
+            const randomIndex = Math.floor(Math.random() * animals.length);
+            document.getElementById('display').src = animals[randomIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', showRandomAnimal);
+        document.body.addEventListener('click', showRandomAnimal);
+    </script>
+</body>
+</html>

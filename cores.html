@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Site - Cores</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        #display {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <button onclick="showRandomColor()">E essa?</button>
+    </div>
+    <script>
+        const colors = [
+            'green',
+            'red',
+            'blue',
+            'yellow',
+            'orange',
+            'black',
+            'white',
+            'gray',
+            'purple',
+            'pink',
+            'brown',
+            'beige'
+        ];
+
+        function showRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.getElementById('display').style.backgroundColor = colors[randomIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', showRandomColor);
+        document.body.addEventListener('click', showRandomColor);
+    </script>
+</body>
+</html>

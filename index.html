@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Site - Escolha</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #container {
+            text-align: center;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-right: 10px;
+            background-color: #ddd;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #bbb;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="radio" id="letras" name="opcao" value="letras" checked>
+        <label for="letras">Letras</label>
+
+        <input type="radio" id="animais" name="opcao" value="animais">
+        <label for="animais">Animais</label>
+
+        <input type="radio" id="cores" name="opcao" value="cores">
+        <label for="cores">Cores</label>
+
+        <button onclick="openSelected()">Abrir</button>
+    </div>
+    <script>
+        function openSelected() {
+            var selectedOption = document.querySelector('input[name="opcao"]:checked').value;
+            window.location.href = selectedOption + ".html";
+        }
+    </script>
+</body>
+</html>
