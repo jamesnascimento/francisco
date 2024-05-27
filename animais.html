@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Site - Animais</title>
+    <title>Animais</title>
     <style>
         body {
             display: flex;
@@ -24,6 +24,10 @@
             width: 100%;
             position: relative;
         }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
         #display {
             max-width: 80%;
             max-height: 80%;
@@ -42,6 +46,7 @@
 </head>
 <body>
     <div id="container">
+        <h1 id="animalName"></h1>
         <img id="display" src="" alt="Animal">
         <button onclick="showRandomAnimal()">E esse?</button>
     </div>
@@ -59,7 +64,7 @@
             'arraia.jpg',
             'hipopotamo.jpg',
             'urso.jpg',
-            'ursopolar.jpg',
+            'urso_polar.jpg',
             'rinoceronte.jpg',
             'zebra.jpg',
             'coruja.jpg',
@@ -74,12 +79,26 @@
             'elefante.jpg',
             'vaca.jpg',
             'galinha.jpg',
-            'piupiu.jpg'
+            'piupiu.jpg',
+            'borboleta.jpg',
+            'jacare.jpg',
+            'flamingo.jpg',
+            'porco.jpg',
+            'bufalo.jpg',
+            'antilope.jpg',
+            'papagaio.jpg',
+            'tatu.jpg'
         ];
 
         function showRandomAnimal() {
             const randomIndex = Math.floor(Math.random() * animals.length);
-            document.getElementById('display').src = animals[randomIndex];
+            const randomImage = animals[randomIndex];
+            document.getElementById('display').src = randomImage;
+
+            // Extract and display the formatted file name
+            const fileName = randomImage.split('/').pop().split('.').shift().replace(/_/g, ' ');
+            const formattedName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+            document.getElementById('animalName').textContent = formattedName;
         }
 
         document.addEventListener('DOMContentLoaded', showRandomAnimal);
